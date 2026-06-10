@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -14,8 +16,17 @@ public class DuplicateRemover {
      * @return a sorted List<String> containing unique words from the input array
      */
     public static List<String> sortAndRemoveDuplicates(String[] words) {
-        // TODO
-        return null;
+        List<String> unique = new ArrayList<>();
+        for (String word : words) {
+            if (!unique.contains(word)) {
+                unique.add(word);
+            }
+        }
+
+        //Sort lexicographically
+        Collections.sort(unique);
+        
+        return unique;
     }
 
     public static void main(String[] args) {
